@@ -8,12 +8,17 @@ const GROQ_TOKEN = process.env.GROQ_API_KEY;
 
 const app = express();
 
-// ✅ Update CORS to allow Vercel domain
+// ✅ FIX: Allow your Vercel frontend
 app.use(cors({
   origin: [
-    'http://localhost:5173',           // Local development
-    'https://smart-chef-react-app.vercel.app/' // Replace with your actual URL
-  ]
+    'http://localhost:5173',                          // Local development
+    'http://localhost:5174',                          // Alternative local port
+    'https://smart-chef-react-app.vercel.app',       // ✅ Your actual Vercel URL
+    'https://*.vercel.app'                            // All Vercel preview deployments
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
