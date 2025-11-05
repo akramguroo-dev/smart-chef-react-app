@@ -7,7 +7,7 @@ An AI-powered recipe generator that suggests recipes based on available ingredie
 
 ## 🔗 Live Demo
 - **Frontend**: https://smart-chef-react-app.vercel.app
-- **Backend API**: https://smart-chef-backend-abcd.onrender.com
+- **Backend API**: https://smart-chef-backend.onrender.com
 
 ## 🚀 Features
 - Input ingredients and get AI-generated recipes
