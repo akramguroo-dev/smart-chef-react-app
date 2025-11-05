@@ -12,7 +12,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',           // Local development
-    'https://smart-chef-app.vercel.app' // Your Vercel domain (update after deployment)
+    'https://smart-chef-react-app.vercel.app/' // Replace with your actual URL
   ]
 }));
 
