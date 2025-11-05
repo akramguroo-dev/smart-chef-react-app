@@ -6,7 +6,7 @@ export async function getRecipeFromAI(ingredientsArr) {
 
   // ✅ Use your deployed backend URL
   const API_URL = import.meta.env.PROD 
-    ? "https://smart-chef-backend-xxxx.onrender.com/api/recipe"  // Replace with YOUR Render URL
+    ? "https://smart-chef-backend.onrender.com/api/recipe"  // Replace with YOUR Render URL
     : "http://localhost:5000/api/recipe";
 
   try {
