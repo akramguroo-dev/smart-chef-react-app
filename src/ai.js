@@ -4,8 +4,13 @@
 export async function getRecipeFromAI(ingredientsArr) {
   const ingredientsString = ingredientsArr.join(", ");
 
+  // ✅ Use your deployed backend URL
+  const API_URL = import.meta.env.PROD 
+    ? "https://smart-chef-backend-xxxx.onrender.com/api/recipe"  // Replace with YOUR Render URL
+    : "http://localhost:5000/api/recipe";
+
   try {
-    const response = await fetch("http://localhost:5000/api/recipe", {
+    const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

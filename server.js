@@ -7,7 +7,15 @@ dotenv.config();
 const GROQ_TOKEN = process.env.GROQ_API_KEY;
 
 const app = express();
-app.use(cors());
+
+// ✅ Update CORS to allow Vercel domain
+app.use(cors({
+  origin: [
+    'http://localhost:5173',           // Local development
+    'https://smart-chef-app.vercel.app' // Your Vercel domain (update after deployment)
+  ]
+}));
+
 app.use(express.json());
 
 // ✅ Debug: Check if token is loaded correctly
